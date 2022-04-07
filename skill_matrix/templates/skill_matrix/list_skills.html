@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Skills{% endblock %}
+
+{% block currentprofile %}{{user}}{% endblock %}
+
+{% block content %}
+
+<div class="mx-auto" style="width: 60%;">
+    <h3>Current skills for user: {{name}}</h3>
+    <div class="row" style="height:10px;"></div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">PK</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Current Score</th>
+            <th scope="col">Required Score</th>
+            <th scope="col">Last Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for skill in skills %}
+            <tr>
+                <th scope="row">{{skill.id}}</th>
+                <td>{{skill.subject}}</td>
+                <td>{{skill.current_level}}</td>
+                <td>{{skill.required_level}}</td>
+                <td>{{skill.last_updated}}</td>
+                <td class="col-sm-2"><a href="{% url 'update_skill' skill.id %}"><button class="btn btn-sm btn-success" type="submit">Update Skill</button></a></td>
+                <td class="col-sm-2"><a href="{% url 'delete_skill' skill.id %}"><button class="btn btn-sm btn-danger" type="submit">Delete Skill</button></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+</div>   
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block currentprofile %}{{user}}{% endblock %}
+
+{% block content %}
+
+<div class="mx-auto" style="width: 30%;">
+  <h1 class="text-center">Welcome to the skills matrix</h1>
+    <p class="text-center">This is the demo application.
+    </p>
+    <h2 class="text-center">Available functions</h2>
+    <ul>
+      <div class="row" style="height:50px;"></div>
+        <li class="nav-item ">
+            <a class="nav-link text-center" style="color: #000000">Add skills to your profile</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-center" style="color: #000000">Create new subjects with skill goals for your team</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-center" style="color: #000000">Move around a fully integrated user authorization system</a>
+          </li>
+    </ul> 
+</div>
+    
+{% endblock %}
